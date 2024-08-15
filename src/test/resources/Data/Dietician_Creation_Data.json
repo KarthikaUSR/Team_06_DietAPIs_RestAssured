@@ -1,0 +1,14 @@
+{
+  "ContactNumber": "string",
+  "DateOfBirth": "2024-07-26T18:14:08.570Z",
+  "Education": "string",
+  "Email": "string",
+  "Firstname": "string",
+  "HospitalCity": "string",
+  "HospitalName": "string",
+  "HospitalPincode": "string",
+  "HospitalStreet": "string",
+  "Lastname": "string"
+
+}
+
