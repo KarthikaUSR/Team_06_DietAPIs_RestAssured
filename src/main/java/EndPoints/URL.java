@@ -1,5 +1,6 @@
 package EndPoints;
 
 public class URL {
-//StoreURL
+   
+	String USER_LOGIN_ENDPOINT = "/login";
 }
