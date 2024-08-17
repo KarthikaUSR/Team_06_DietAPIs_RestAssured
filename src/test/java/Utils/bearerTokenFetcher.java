@@ -35,5 +35,39 @@ public class bearerTokenFetcher {
 	    //userobj.setAdminBearerToken(token);
 	    return token;
 	    }
+	public String Token(String role,String username,String password) throws JsonProcessingException
+		{   
+			//userloginpojo userobj = new userloginpojo();
+			
+			String token="";
+			
+			if(role.equalsIgnoreCase("Admin"))
+			{
+			    String UserName=propertyFile.getProperty("adminUserName");
+			    String Password=propertyFile.getProperty("adminPassword");
+			    token=bearerTokenFetcher.fetchBearerToken(UserName,Password);
+			    //userobj.setAdminBearerToken(Token);
+				
+			}
+			else if(role.equalsIgnoreCase("Dietician"))
+			{
+				token=bearerTokenFetcher.fetchBearerToken(username,password);
+				//userobj.setDieticianBearerToken(Token);
+				//System.out.println("D_token:" + userobj.getDieticianBearerToken());
+			}
+			else if(role.equalsIgnoreCase("Patient"))
+			{
+				token=bearerTokenFetcher.fetchBearerToken(username,password);
+				//userobj.setPatientBearerToken(Token);
+			}
+			else
+			{
+				System.out.println("Enter valid role");
+			}
+			
+			return token;
+		
+	 	
+		}
 
 }
