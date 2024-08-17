@@ -14,35 +14,26 @@ import io.restassured.response.Response;
 
 public class bearerTokenFetcher {
 	
-	 public static void fetchBearerToken(String authUrl,String username,String password) throws JsonProcessingException  {
+	public static String fetchBearerToken(String username,String password) throws JsonProcessingException  {
 		 userloginpojo userobj = new userloginpojo();
 		 userobj.setUserLoginEmail(username);
 		 userobj.setPassword(password);
 		 ObjectMapper objectMapper = new ObjectMapper();
 		 String jsonbody = objectMapper.writeValueAsString(userobj);
 		//System.out.println(jsonbody);	
-	    Response response = RestAssured.given().contentType(ContentType.JSON)
+		 Response response = RestAssured.given().baseUri(URL.BaseURL)
+	    		    .basePath(URL.LoginEndpoint)
+	    		    .contentType(ContentType.JSON)
 	        		.body(jsonbody)
 	                .when()
-	                .post(authUrl)
+	                .post()
 	                .then().log().all()
 	        .extract().response();
 	    Assert.assertEquals(200, response.statusCode());
 	    String token=response.body().jsonPath().getString("token");
 	    System.out.println("BearerToken : "+token);
-	    userobj.setBearerToken(token);
-	    
-	        
-	        //return token;
+	    //userobj.setAdminBearerToken(token);
+	    return token;
 	    }
-
-	   /* public static void main(String[] args) throws JsonProcessingException  {
-	    
-	    	 String authUrl = URL.BaseURL+URL.LoginEndpoint;
-
-	        //String bearerToken = 
-	        fetchBearerToken(authUrl);
-	        //System.out.println("Bearer Token: " + bearerToken);
-	    }*/
 
 }
