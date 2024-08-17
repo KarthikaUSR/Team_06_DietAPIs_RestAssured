@@ -1,7 +1,9 @@
 package StepDefintions;
 
 import EndPoints.URL;
-import base.BaseClass;
+import Utils.Endpoints;
+import Utils.RestUtils;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,25 +13,56 @@ import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
-public class User_Login extends BaseClass {
+public class User_Login extends RestUtils {
 
     Response response;
-    static GlobalDatas globalDatas=new GlobalDatas();
 
-    @Given("User creates Post request with request body")
+
+    @Given("user creates post request with request body")
     public void user_creates_post_request_with_request_body() throws IOException {
-        addBasicAuth(getPropertyFileValue("userEmail"), getPropertyFileValue("password"));
+//        fetchBearerToken();
+        /**
+         String userEmail = getGlobalValue("userEmail");
+         String password = getGlobalValue("password");
+         /*
+         String requestBody = "{\n" +
+         "  \"password\": \"" + password + "\",\n" +
+         "  \"userLoginEmail\": \""+ userEmail +"\"\n" +
+         "}";
+
+
+         UserLogin_Pojo userLoginPojo = UserLogin_Pojo.builder()
+         .userLoginEmail(userEmail)
+         .password(password)
+         .build();
+
+         //convert the POJO to JSON, Jackson Bind
+         Gson gson = new Gson();
+         String requestBody = gson.toJson(userLoginPojo);
+
+         reqSpec = given()
+         .spec(requestSpecification())
+         .body(requestBody)
+         .log().all();
+         //        addBasicAuth(getGlobalValue("userEmail"),getGlobalValue("password"));
+         resSpec = responseSpecification();
+         */
     }
-    @When("User send {string} HTTP request with endpoint")
+    @When("user send {string} http request with endpoint")
     public void user_send_http_request_with_endpoint(String reqType) {
-        response = addReqType(reqType, URL.USERLOGIN);
-        int statusCode = getStatusCode(response);
-        globalDatas.setStatusCode(statusCode);
-    }
+        response = reqSpec.when()
+                .post(Endpoints.USERLOGIN)
+                .then()
+                .log().all()
+                .spec(resSpec)
+                .extract().response();
+//        String adminToken = response.jsonPath().getString("token");
+        // Deserialize response to UserLoginResponse_Pojo
+        // UserLoginResponse_Pojo userLoginResponse = response.as(UserLoginResponse_Pojo.class);
 
-    @Then("User recieves statusCode {int} created with response body")
-    public void user_recieves_status_code_created_with_response_body(Integer int1) {
-        assertEquals(response.getStatusCode(), 200);
     }
-
+    @Then("user receives statuscode {int} created with response body")
+    public void user_receives_statuscode_created_with_response_body(Integer expectedStatusCode) {
+        assertEquals(expectedStatusCode.intValue(), response.getStatusCode());
+    }
 }
