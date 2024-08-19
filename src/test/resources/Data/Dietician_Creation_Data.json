@@ -1,14 +1,14 @@
 {
-  "ContactNumber": "string",
-  "DateOfBirth": "2024-07-26T18:14:08.570Z",
-  "Education": "string",
-  "Email": "string",
-  "Firstname": "string",
-  "HospitalCity": "string",
-  "HospitalName": "string",
-  "HospitalPincode": "string",
-  "HospitalStreet": "string",
-  "Lastname": "string"
+  "ContactNumber": "1122331122",
+  "DateOfBirth": "2009-07-26T18:14:08.570Z",
+  "Education": "MA",
+  "Email": "test@email.com",
+  "Firstname": "rabi",
+  "HospitalCity": "fremont",
+  "HospitalName": "kp",
+  "HospitalPincode": "123456",
+  "HospitalStreet": "paseo",
+  "Lastname": "booni"
 
 }
 

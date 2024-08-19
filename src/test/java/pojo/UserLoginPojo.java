@@ -1,6 +1,6 @@
 package pojo;
 
-public class UserLogin_Pojo {
+public class UserLoginPojo {
 
     private String userLoginEmail;
     private String password;

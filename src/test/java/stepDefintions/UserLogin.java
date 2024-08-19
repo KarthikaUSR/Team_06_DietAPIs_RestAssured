@@ -1,7 +1,6 @@
-package StepDefintions;
+package stepDefintions;
 
-import EndPoints.URL;
-import Utils.Endpoints;
+import Utils.EndPoints;
 import Utils.RestUtils;
 
 import io.cucumber.java.en.Given;
@@ -13,7 +12,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
-public class User_Login extends RestUtils {
+public class UserLogin extends RestUtils {
 
     Response response;
 
@@ -51,7 +50,7 @@ public class User_Login extends RestUtils {
     @When("user send {string} http request with endpoint")
     public void user_send_http_request_with_endpoint(String reqType) {
         response = reqSpec.when()
-                .post(Endpoints.USERLOGIN)
+                .post(EndPoints.USERLOGIN)
                 .then()
                 .log().all()
                 .spec(resSpec)

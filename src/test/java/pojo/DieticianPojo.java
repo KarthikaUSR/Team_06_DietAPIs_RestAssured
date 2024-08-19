@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Dietician_Pojo {
+public class DieticianPojo {
 
     private String ContactNumber;
     private String DateOfBirth;

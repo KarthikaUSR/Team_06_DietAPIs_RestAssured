@@ -9,7 +9,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import pojo.UserLogin_Pojo;
+import pojo.UserLoginPojo;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -27,7 +27,7 @@ public class RestUtils {
     public static String adminToken;
 
     public RequestSpecification requestSpecification() throws IOException {
-//        System.out.println("========admin token ======="+ adminToken );
+
         if (reqSpec == null) {
             PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
             reqSpec = new RequestSpecBuilder()
@@ -35,16 +35,12 @@ public class RestUtils {
                     .addFilter(RequestLoggingFilter.logRequestTo(log))
                     .addFilter(ResponseLoggingFilter.logResponseTo(log))
                     .setContentType(ContentType.JSON)
+                    .addHeader("Authorization", "Bearer " + getGlobalValue("adminToken"))
                     .build();
-
-//            if(adminToken != null){
-//                reqSpec.header("Authorization", "Bearer " + adminToken);
-//            }else {
-//                System.out.println("~~~Admin token is null!~~~");
-//            }
         }
         return reqSpec;
     }
+    
     public ResponseSpecification responseSpecification() {
         if (resSpec == null) {
             resSpec = new ResponseSpecBuilder().build();
@@ -52,32 +48,29 @@ public class RestUtils {
         return resSpec;
     }
 
-    // Initialize Request Specification if null
-    private static void initializeRequestSpec() throws IOException {
+    // set token in header 
+    public static void setTokenInHeaderRequestSpec() throws IOException {
+
         if (reqSpec == null) {
             reqSpec = new RequestSpecBuilder()
                     .setBaseUri(getGlobalValue("baseURL"))
                     .setContentType(ContentType.JSON)
-                    .build();
-        }
-    }
-    // Initialize Response Specification if null
-    private static void initializeResponseSpec() {
-        if (resSpec == null) {
-            resSpec = new ResponseSpecBuilder()
-                    .expectStatusCode(200)
+                    .addHeader("Authorization", "Bearer " + getGlobalValue("adminToken"))
                     .build();
         }
     }
 
     public static String getGlobalValue(String key) throws IOException {
         Properties prop = new Properties();
-        FileInputStream fis = new FileInputStream("src/test/resources/global.properties");
+        FileInputStream fis = new FileInputStream("src/test/resources/config.properties");
         prop.load(fis);
         return prop.getProperty(key);
 
     }
 
+
+
+    /*
     public static void fetchBearerToken1() throws IOException {
         initializeRequestSpec();
         initializeResponseSpec();
@@ -92,7 +85,7 @@ public class RestUtils {
 //                .password(getGlobalValue("password"))
 //                .build();
 
-        UserLogin_Pojo userobj = new UserLogin_Pojo();
+        UserLoginPojo userobj = new UserLoginPojo();
         userobj.setUserLoginEmail(getGlobalValue("adminEmail"));
         userobj.setPassword(getGlobalValue("password"));
         ObjectMapper objectMapper = new ObjectMapper();
@@ -102,7 +95,7 @@ public class RestUtils {
                 .spec(reqSpec)
                 .body(jsonbody)
                 .when()
-                .post(Endpoints.USERLOGIN)
+                .post(EndPoints.USERLOGIN)
                 .then()
                 .log().all()  // Log request and response
                 .extract().response();
@@ -111,21 +104,23 @@ public class RestUtils {
 //        userobj.setBearerToken(token);
 
     }
+*/
 
-
+    // Initialize Response Specification if null
+    private static void initializeResponseSpec() {
+        if (resSpec == null) {
+            resSpec = new ResponseSpecBuilder()
+                    .expectStatusCode(200)
+                    .build();
+        }
+    }
 
     public void addHeader(String key,String value){
         reqSpec= given().header(key,value);
 
     }
-    public void updateAuthorizationHeader() {
-        if (adminToken != null) {
-            reqSpec.header("Authorization", "Bearer " + adminToken);
-        }
-    }
-    public static void addBasicAuth(String userEmail,String password) {
-        reqSpec=reqSpec.auth().preemptive().basic(userEmail, password);
-    }
+
+
     //    public Response addReqType(String reqType) {
 //        switch (reqType.toUpperCase()) {
 //            case "GET":

@@ -1,7 +1,7 @@
-package StepDefintions;
+package stepDefintions;
 
 import Utils.BearerTokenFetcher;
-import Utils.Endpoints;
+import Utils.EndPoints;
 import Utils.RestUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,7 +20,7 @@ public class GetAllDieticians extends RestUtils {
     @Given("admin bearer token is set in header")
     public void admin_bearer_token_is_set_in_header() throws IOException {
         // Write code here that turns the phrase above into concrete actions
-        BearerTokenFetcher.fetchBearerToken(getGlobalValue("baseURL"),getGlobalValue("adminEmail"),getGlobalValue("password"));
+        BearerTokenFetcher.fetchBearerToken(getGlobalValue("adminEmail"),getGlobalValue("password"));
         reqSpec = given().header("Authorization", "Bearer " + getGlobalValue("adminToken"))
                 .spec(requestSpecification())
                 .log().all();
@@ -36,7 +36,7 @@ public class GetAllDieticians extends RestUtils {
     public void admin_send_http_request_with(String string, String string2) {
         // Write code here that turns the phrase above into concrete actions
         response = reqSpec.when()
-                .get(Endpoints.GET_ALL_DIETICIANS)
+                .get(EndPoints.GET_ALL_DIETICIANS)
                 .then()
                 .log().all()
 //                .spec(resSpec)
@@ -58,9 +58,9 @@ public class GetAllDieticians extends RestUtils {
                 .log().all();
     }
     @When("admin send put method")
-    public void adminSendPutMethod() {
+    public void admin_Send_Put_Method() {
         response = reqSpec.when()
-                .put(Endpoints.GET_ALL_DIETICIANS)
+                .put(EndPoints.GET_ALL_DIETICIANS)
                 .then()
                 .log().all()
 //                .spec(resSpec)
