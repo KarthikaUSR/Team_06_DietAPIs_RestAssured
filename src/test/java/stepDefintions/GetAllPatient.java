@@ -91,8 +91,8 @@ public class GetAllPatient {
 
 	}
 
-	@Then("^(.+) recieves (.+) Forbidden$")
-	public void patient_recieves_forbidden(String S,int int1) {
+	@Then("^(.+) recieves (.+) Forbidden for get all patient$")
+	public void patient_recieves_forbidden_for_get_all_patient(String S,int int1) {
 		System.out.println("Access Rights for " +S+" is Forbidden");
 		Assert.assertEquals(Resp.statusCode(), int1);
 	    

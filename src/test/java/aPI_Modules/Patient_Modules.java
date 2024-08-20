@@ -5,6 +5,7 @@ import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.response.ResponseOptions;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import pojo.PatientInfo;
@@ -13,6 +14,8 @@ import utils.EndPoints;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
+
+import org.hamcrest.Matcher;
 import org.json.JSONObject;
 import org.junit.Assert;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -28,6 +31,7 @@ public class Patient_Modules {
 	PatientInfo patientinfo=new PatientInfo();
 	UserLoginPojo userobj =new UserLoginPojo() ;
 	private static Patient_Modules patient_Modules = null;
+	//Response response;
 	private Patient_Modules()
     {
         
@@ -39,6 +43,7 @@ public class Patient_Modules {
  
         return patient_Modules;
     }
+	
 	
 	public void tokengen(String tok)
 	{
@@ -56,6 +61,7 @@ public class Patient_Modules {
 		return 	reqSpec;
 		   
 	}
+	
 	//get all patients
 	public Response GetAllPatients_sendrequest(String Key) throws IOException
 	{
@@ -158,14 +164,48 @@ public class Patient_Modules {
 	
 		JSONObject jsonObj = new JSONObject(userData); 
 		String jsonbody=jsonObj.get(Key).toString();
-		if(Key.equalsIgnoreCase("PateintCreationValidDataInvalidMethod"))
+		
+		if(Key.equalsIgnoreCase("PateintCreationValidAdditional"))//PateintCreationValidAdditional
+		{
+			
+			 response =setup_PatientCreation()
+					.basePath(EndPoints.PATIENTCREATION)
+					.multiPart("file", file,"application/pdf")
+					.multiPart("patientInfo", jsonbody,"application/json")		
+					.when()
+					.post();			
+		     response.prettyPrint();
+		}
+		else if(Key.equalsIgnoreCase("PateintCreationInValidMandatory"))
+		{
+			  System.out.println("body:"+jsonbody);
+			 response =setup_PatientCreation()
+					.basePath(EndPoints.PATIENTCREATION)
+					.multiPart("file", file,"application/pdf")
+					.multiPart("patientInfo", jsonbody,"application/json")		
+					.when()
+					.post();			
+		     response.prettyPrint();
+		}
+		else if(Key.equalsIgnoreCase("PateintCreationInValidAdditional"))
 		{
 			 response =setup_PatientCreation()
 					.basePath(EndPoints.PATIENTCREATION)
 					.multiPart("file", file,"application/pdf")
 					.multiPart("patientInfo", jsonbody,"application/json")		
 					.when()
-					.get();			
+					.post();			
+		     response.prettyPrint();
+		}
+		
+		else if(Key.equalsIgnoreCase("PateintCreationValidDataInvalidMethod"))
+		{
+			 response =setup_PatientCreation()
+					.basePath(EndPoints.PATIENTCREATION)
+					.multiPart("file", file,"application/pdf")
+					.multiPart("patientInfo", jsonbody,"application/json")		
+					.when()
+					.put();			
 		     response.prettyPrint();
 		}
 		else if(Key.equalsIgnoreCase("PateintCreationValidDataInvalidEndpoints"))

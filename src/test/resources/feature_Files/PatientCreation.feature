@@ -22,7 +22,7 @@ Background:
     |PateintCreationInValidAdditional        |400       |
     |PateintCreationValidDataInvalidMethod   |405       | 
     |PateintCreationValidDataInvalidEndpoints|404       | 
-    #|PateintCreationInValidContentType       |415       |
+    |PateintCreationInValidContentType       |415       |
     
   @Patient
   
@@ -31,7 +31,7 @@ Background:
     Given <Roles> Set Token with <Email> <Password> 
     And   <Roles> creates request by entering valid data into the form-data
     When  <Roles> send http requests with endpoint for patient creation
-    Then  <Roles> recieves 403 Forbidden
+    Then  <Roles> recieves 403 Forbidden for patient creation
     Examples: 
     |Email                  |Password  | Roles     |
     |Team6.admin@gmail.com  |test      | Admin     |

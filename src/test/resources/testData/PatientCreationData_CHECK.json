@@ -3,21 +3,21 @@
   "PateintCreationValid" : {
 	"FirstName":"AHack",
 	"LastName":"TTT",
-	"ContactNumber": "1111112222",
-	"Email": "RestA_hak1@gmail.com",
+	"ContactNumber": "1111112333",
+	"Email": "RestA_hak11@gmail.com",
 	"Allergy": "almond",
 	"FoodPreference": "NonVeg",
 	"CuisineCategory":"Tamil nadu",
-	"DateOfBirth": "1976-01-17"
+	"DateOfBirth": "1976-11-17"
   },
   "PateintCreationValidMandatory" : {
 	"FirstName":"BHack",
 	"LastName":"UUU",
-	"ContactNumber": "1111113333",
-	"Email": "RestA_hak2@gmail.com",
+	"ContactNumber": "1111113444",
+	"Email": "RestA_hak211@gmail.com",
 	"Allergy": "soy",
 	"CuisineCategory":"Tamil nadu",
-	"DateOfBirth": "1976-02-16"
+	"DateOfBirth": "1976-12-16"
   },
   "PateintCreationValidAdditional" : {
 	
