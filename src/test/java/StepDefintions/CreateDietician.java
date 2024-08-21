@@ -45,15 +45,15 @@ public class CreateDietician extends RestUtils {
 //		response = reqSpec.body(value) .when() .post(EndPoints.CREATE_DIETICIAN) .then() .log().all() .extract().response();
 //		response.prettyPrint();
 		
-//		 File json1 = new File(System.getProperty("user.dir") + "/src/test/resources/testData/PatientCreationData_CHECK.json");
-//
-//			ObjectMapper mapper = new ObjectMapper();
-//			Map<String, Object> userData = mapper.readValue(  
-//						json1, new TypeReference<Map<String, Object>>() {  
-//	            });
-//		
-//			JSONObject jsonObj = new JSONObject(userData); 
-//			String jsonbody=jsonObj.get(Key).toString();
+		 File json1 = new File(System.getProperty("user.dir") + "/src/test/resources/testData/PatientCreationData_CHECK.json");
+
+			ObjectMapper mapper = new ObjectMapper();
+			Map<String, Object> userData = mapper.readValue(  
+						json1, new TypeReference<Map<String, Object>>() {  
+	            });
+		
+			JSONObject jsonObj = new JSONObject(userData); 
+			String jsonbody=jsonObj.get(Key).toString();
 	}
 
 	@When("admin send post http request with endpoint")

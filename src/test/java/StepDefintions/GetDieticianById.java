@@ -53,5 +53,22 @@ public class GetDieticianById extends RestUtils {
 			System.out.println("respStatusCode : "+ response.getStatusCode());
 	}
 
+	@When("Admin send GET http request with invalid dietician id")
+	public void admin_send_get_http_request_with_invalid_dietician_id() {
+	    // Write code here that turns the phrase above into concrete actions
+		response = RestUtils.reqSpec.when()
+                .get(EndPoints.GET_DIETICIAN_BY_ID_new)
+                .then()
+                .log().all()
+                .extract().response();
+	}
+
+	@Then("Admin recieves {int} not found")
+	public void admin_recieves_not_found(Integer expectedStatusCode) {
+	    // Write code here that turns the phrase above into concrete actions
+		 assertEquals(expectedStatusCode.intValue(), response.getStatusCode());
+		 System.out.println("expectedStatusCode : "+ expectedStatusCode);
+			System.out.println("respStatusCode : "+ response.getStatusCode());
+	}
 
 }
