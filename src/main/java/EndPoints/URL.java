@@ -2,5 +2,7 @@ package EndPoints;
 
 public class URL {
    
-	String USER_LOGIN_ENDPOINT = "/login";
+	public static final String USERLOGIN="/login";
+
+	
 }

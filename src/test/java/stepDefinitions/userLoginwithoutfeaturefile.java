@@ -1,14 +1,16 @@
-package StepDefintions;
+package stepDefinitions;
 
 import io.restassured.builder.RequestSpecBuilder;
+
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import pojo.LoginRequest;
 import pojo.LoginResponse;
+import utils.EndPoints;
 
 import static io.restassured.RestAssured.given;
 
-public class userLogin_POST {
+public class userLoginwithoutfeaturefile {
 	
 		public static void main(String[] args) {
 		
@@ -25,7 +27,7 @@ public class userLogin_POST {
 		
 	RequestSpecification reqLogin	= given().log().all()
 		                             .spec(req).body(loginrequest);
-	LoginResponse loginResponse = reqLogin.when().post("/login").then().log().all().extract().response().as(LoginResponse.class);
+	LoginResponse loginResponse = reqLogin.when().post(EndPoints.USERLOGIN).then().log().all().extract().response().as(LoginResponse.class);
 	System.out.println(loginResponse.getToken());
 		
 		
