@@ -1,0 +1,111 @@
+{
+    "DietCreationValid":{
+      "ContactNumber": "1120001124",
+      "DateOfBirth": "2009-07-26T18:14:08.570Z",
+      "Education": "MA",
+      "Email": "test@email.com",
+      "Firstname": "upDiet",
+      "HospitalCity": "sanjose",
+      "HospitalName": "kp",
+      "HospitalPincode": "123456",
+      "HospitalStreet": "paseo",
+      "Lastname": "booni"
+    },
+    
+      "DietCreationValidMandatory":{
+        "ContactNumber": "1120001125",
+        "DateOfBirth": "2009-07-26T18:14:08.570Z",
+        "Education": "MA",
+        "Email": "test@email.com",
+        "Firstname": "upDiet",
+        "HospitalCity": "sanjose",
+        "HospitalName": "kp",
+        "HospitalPincode": "123456",
+        "HospitalStreet": "paseo",
+        "Lastname": "booni"
+      },
+      "DietCreationValidAdditional":{
+        "ContactNumber": "1120001125",
+        "DateOfBirth": "2009-07-26T18:14:08.570Z",
+        "Education": "MA",
+        "Email": "test@email.com",
+        "Firstname": "upDiet",
+        "HospitalCity": "sanjose",
+        "HospitalName": "kp",
+        "HospitalPincode": "123456",
+        "HospitalStreet": "paseo",
+        "Lastname": "booni"
+      },
+      "DietCreationInValidAdditional":{
+        "ContactNumber": "1120001125",
+        "DateOfBirth": "2009-07-26T18:14:08.570Z",
+        "Education": "MA",
+        "Email": "test@email.com",
+        "Firstname": "upDiet",
+        "HospitalCity": "sanjose",
+        "HospitalName": "kp",
+        "HospitalPincode": "123456",
+        "HospitalStreet": "paseo",
+        "Lastname": "booni"
+      },
+      "DietCreationValidDataInvalidMethod": {
+        "ContactNumber": "1120001125",
+        "DateOfBirth": "2009-07-26T18:14:08.570Z",
+        "Education": "MA",
+        "Email": "test@email.com",
+        "Firstname": "upDiet",
+        "HospitalCity": "sanjose",
+        "HospitalName": "kp",
+        "HospitalPincode": "123456",
+        "HospitalStreet": "paseo",
+        "Lastname": "booni"
+      },
+      "DietCreationValidDataInvalidEndpoints": {
+        "ContactNumber": "1120001125",
+        "DateOfBirth": "2009-07-26T18:14:08.570Z",
+        "Education": "MA",
+        "Email": "test@email.com",
+        "Firstname": "upDiet",
+        "HospitalCity": "sanjose",
+        "HospitalName": "kp",
+        "HospitalPincode": "123456",
+        "HospitalStreet": "paseo",
+        "Lastname": "booni"
+      },
+      "DieticianCreationCreationInValidContentType": {
+        "ContactNumber": "1120001125",
+        "DateOfBirth": "2009-07-26T18:14:08.570Z",
+        "Education": "MA",
+        "Email": "test@email.com",
+        "Firstname": "upDiet",
+        "HospitalCity": "sanjose",
+        "HospitalName": "kp",
+        "HospitalPincode": "123456",
+        "HospitalStreet": "paseo",
+        "Lastname": "booni"
+      },
+      "Dietician": {
+        "ContactNumber": "1120001125",
+        "DateOfBirth": "2009-07-26T18:14:08.570Z",
+        "Education": "MA",
+        "Email": "test@email.com",
+        "Firstname": "upDiet",
+        "HospitalCity": "sanjose",
+        "HospitalName": "kp",
+        "HospitalPincode": "123456",
+        "HospitalStreet": "paseo",
+        "Lastname": "booni"
+      },
+      "Patient": {
+        "ContactNumber": "1120001125",
+        "DateOfBirth": "2009-07-26T18:14:08.570Z",
+        "Education": "MA",
+        "Email": "test@email.com",
+        "Firstname": "upDiet",
+        "HospitalCity": "sanjose",
+        "HospitalName": "kp",
+        "HospitalPincode": "123456",
+        "HospitalStreet": "paseo",
+        "Lastname": "booni"
+      }
+    }
