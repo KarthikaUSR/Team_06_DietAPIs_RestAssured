@@ -98,9 +98,9 @@ public class BearerTokenFetcher extends RestUtils {
             e.printStackTrace();
         }
     }
-    public static String getBearerToken() {
-        return token; // Provide access to the stored token
-    }
+//    public static String getBearerToken() {
+//        return token; // Provide access to the stored token
+//    }
 
 
 }

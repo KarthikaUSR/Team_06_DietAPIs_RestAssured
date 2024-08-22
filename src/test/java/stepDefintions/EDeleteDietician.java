@@ -3,17 +3,20 @@ package stepDefintions;
 import Utils.BearerTokenFetcher;
 import Utils.EndPoints;
 import Utils.RestUtils;
+import Utils.Util1;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.response.Response;
 
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class DeleteDietician extends RestUtils {
+public class EDeleteDietician extends Util1 {
 
+    Response response;
     //scenario 1 - success 200
     @Given("admin bearer token is set")
     public void admin_bearer_token_is_set() throws IOException {
@@ -22,14 +25,16 @@ public class DeleteDietician extends RestUtils {
 //                .spec(requestSpecification())
 //                .log().all();
 
-        BearerTokenFetcher.fetchBearerToken(getGlobalValue("adminEmail"),getGlobalValue("password"));
-//        requestSpecification();
-        setTokenInHeaderRequestSpec();
+        BearerTokenFetcher.fetchBearerToken(getGlobalValue("userEmail"), getGlobalValue("password"));
+        requestSpecification();  // Ensure reqSpec is initialized
+        reqSpec.header("Authorization", "Bearer " + getGlobalValue("adminToken"));
+//        setTokenInHeaderRequestSpec();
     }
     @Given("admin create delete request")
     public void admin_create_delete_request() throws IOException {
         reqSpec = given().header("Authorization", "Bearer " + getGlobalValue("adminToken"))
-                .spec(requestSpecification())
+//                .spec(requestSpecification())
+                .spec(reqSpec)
                 .log().all();
 
 //        setTokenInHeaderRequestSpec();
@@ -53,7 +58,8 @@ public class DeleteDietician extends RestUtils {
     @Given("admin create post request")
     public void admin_create_post_request() throws IOException {
         reqSpec = given().header("Authorization", "Bearer " + getGlobalValue("adminToken"))
-                .spec(requestSpecification())
+//                .spec(requestSpecification())
+                .spec(reqSpec)
                 .log().all();
 
 //        setTokenInHeaderRequestSpec();
@@ -61,15 +67,15 @@ public class DeleteDietician extends RestUtils {
     @When("admin send post request with endpoint")
     public void admin_send_post_request_with_endpoint() {
         response = reqSpec.when()
-                .post(EndPoints.DELETE_DIETICIAN_BY_ID)
+                .post(EndPoints.CREATE_DIETICIAN)
                 .then()
                 .log().all()
 //                .spec(resSpec)
                 .extract().response();
     }
     @Then("admin recives {int} method not allowed")
-    public void admin_recives_method_not_allowed(Integer expectedStatusCode) {
-        assertEquals(expectedStatusCode.intValue(), response.getStatusCode());
+    public void admin_recives_method_not_allowed(Integer StatusCode) {
+        assertEquals(StatusCode.intValue(), response.getStatusCode());
     }
 
     //scenario 3 - invalid id - 404 not found
@@ -83,10 +89,10 @@ public class DeleteDietician extends RestUtils {
 //        // Write code here that turns the phrase above into concrete actions
 //        throw new io.cucumber.java.PendingException();
 //    }
-    @Then("admin recives {int} not found")
-    public void admin_recives_not_found(Integer StatusCode) {
-        assertEquals(StatusCode.intValue(), response.getStatusCode());
-    }
+//    @Then("admin recives {int} not found")
+//    public void admin_recives_not_found(Integer StatusCode) {
+//        assertEquals(StatusCode.intValue(), response.getStatusCode());
+//    }
 
     //scenario 4 - invalid endpoint - 404 not found
 //    @Given("admin create delete request")

@@ -8,8 +8,8 @@ Feature: retrieve all dieticians
   Scenario: check admin able to retrieve all dieticians with invalid method
     Given admin create put method
     When admin send put method
-    Then admin recives 405 method not allowed
+    Then admin recieves 405 method not allowed
   Scenario: check admin able to retrieve all dieticians with invalid endpoint
-    Given admin create get request
+    Given admin create get request with invalid endpoint
     When admin send http request with invalid endpoint
-    Then admin recives 404 not found
+    Then admin got 404 not found
