@@ -1,0 +1,109 @@
+
+{ 
+  "PateintUpdateValid" : {
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155443",
+	"Email": "RestA_hak66@gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-11"
+  },
+  "PateintUpdateValidMandatory" : {
+	"FirstName":"mandatory",
+	"LastName":"Update",
+	"ContactNumber": "1112113444",
+	"Email": "RestA_t@gmail.com",
+	"Allergy": "soy",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1976-11-16"
+  },
+  "PateintUpdateValidAdditional" : {
+	
+	"FoodPreference": "VEGAN"
+	
+  },
+  "PateintUpdateInValidMandatory" : {
+  	"FirstName":"CHack",
+  	"LastName":"TTT1",
+  	"ContactNumber": "1111144444",
+  	"Email": "RestA_hakgmail.com",
+  	"Allergy": "almond",
+  	"FoodPreference": "NonVeg",
+  	"CuisineCategory":"Tamil nadu",
+  	"DateOfBirth": "1976-03-16"
+    },
+  "PateintUpdateInValidPatientID" : {
+  	"FirstName":"Patthree",
+  	"LastName":"TTT",
+  	"ContactNumber": "6388173333",
+  	"Email": "RestA_chec3@gmail.com",
+  	"Allergy": "almond",
+  	"FoodPreference": "NonVeg",
+  	"CuisineCategory":"Tamil nadu",
+  	"DateOfBirth": "1961-03-12"
+    },
+	"PateintUpdateWithNoFile" : {
+  	"FirstName":"Karthika",
+  	"LastName":"nofile",
+  	"ContactNumber": "6388173333",
+  	"Email": "RestA_chec3@gmail.com",
+  	"Allergy": "almond",
+  	"FoodPreference": "NonVeg",
+  	"CuisineCategory":"Tamil nadu",
+  	"DateOfBirth": "1961-03-12"
+	    },
+  "PateintUpdateValidDataInvalidMethod" : {
+		"FirstName":"Patthree",
+		"LastName":"TTT",
+		"ContactNumber": "1038173333",
+		"Email": "RestA_che3@gmail.com",
+		"Allergy": "almond",
+		"FoodPreference": "NonVeg",
+		"CuisineCategory":"Tamil nadu",
+		"DateOfBirth": "1961-03-13"
+	  },
+ "PateintUpdateValidDataInvalidEndpoints" : {
+	  	"FirstName":"Pattwo",
+	  	"LastName":"TTT",
+	  	"ContactNumber": "1088172222",
+	  	"Email": "RestA_check2@gmail.com",
+	  	"Allergy": "almond",
+	  	"FoodPreference": "NonVeg",
+	  	"CuisineCategory":"Tamil nadu",
+	  	"DateOfBirth": "1961-02-16"
+	    },
+ "PateintUpdationInValidContentType" : {
+	  	"FirstName":"Patdthree",
+	  	"LastName":"TTT",
+	  	"ContactNumber": "1444173333",
+	  	"Email": "RestA_check32@gmail.com",
+	  	"Allergy": "almond",
+	  	"FoodPreference": "NonVeg",
+	  	"CuisineCategory":"Tamil nadu",
+	  	"DateOfBirth": "1961-03-18"
+	    },
+	"Admin" : {
+	  	"FirstName":"AdminPatdthree",
+	  	"LastName":"TTTr",
+	  	"ContactNumber": "1222171111",
+	  	"Email": "RestA_checkadmin@gmail.com",
+	  	"Allergy": "almond",
+	  	"FoodPreference": "NonVeg",
+	  	"CuisineCategory":"Tamil nadu",
+	  	"DateOfBirth": "1963-01-18"
+		    },
+	"Patient" : {
+	  	"FirstName":"Patientdthree",
+	  	"LastName":"TTTw",
+	  	"ContactNumber": "1333173666",
+	  	"Email": "RestA_checkpatient@gmail.com",
+	  	"Allergy": "almond",
+	  	"FoodPreference": "NonVeg",
+	  	"CuisineCategory":"Tamil nadu",
+	  	"DateOfBirth": "1963-03-18"
+			    }
+  
+}
+

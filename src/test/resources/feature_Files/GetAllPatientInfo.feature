@@ -8,23 +8,15 @@ Background:
   @Patient
   Scenario: Check dietician able to retrieve all patients
   
-    Given  Dietician create GET request 
-    When   Dietician send GET http request with endpoint 
-    Then   Dietician recieves 200 with response body
+    Given  Dietician create <Key> request 
+    When   Dietician send http get all patient request with endpoint <Key>
+    Then   Dietician recieves <Statuscode> with response body
     
-  @Patient
-  Scenario: Check dietician able to retrieve all patient with invalid method
-  
-    Given  Dietician create PUT request 
-    When   Dietician send PUT http request with endpoint 
-    Then   Dietician recieves 405 method not allowed
-    
-  @Patient
-  Scenario: Check dietician able to retrieve all patient with invalid endpoint
-  
-    Given  Dietician create GET request 
-    When   Dietician send GET http request with invalid endpoint
-    Then   Dietician recieves 404 not found
+    Examples: 
+    |Key            |Statuscode| 
+    |Valid          |200       | 
+    |InvalidMethod  |405       |
+    |InvalidEndpoint|404       |  
     
   @Patient
   
@@ -33,11 +25,11 @@ Background:
     Given <Roles> Set Token with <Email> <Password> 
     And   <Roles> create GET requests 
     When  <Roles> send GET http requests with endpoint
-    Then  <Roles> recieves 403 Forbidden
+    Then  <Roles> recieves 403 Forbidden for all patient
     Examples: 
     |Email                |Password  | Roles     |
     |Team6.admin@gmail.com|test      | Admin     |
-    |RestA_Hack1@gmail.com|test      | Patient   |
+    |RestA_Hack2@gmail.com|test      | Patient   |
      
      
      

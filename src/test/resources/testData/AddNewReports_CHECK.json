@@ -1,0 +1,141 @@
+
+{ 
+  "WithVitalsforPatientWithValidData" : {
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113@gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+  },
+  "WithoutVitalsforPatientWithValidData" : {
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113@gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+  },
+  "AddOnlyNewVitalsWithoutReportsForPatientWithReport" : {
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113@gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+    },
+	
+	"AddOnlyNewVitalsWithoutReportsForPatientWithoutReport" : { 
+			
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113@gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+	  },
+  "PatientOnlyWithValidMandatoryDetails" : {
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113@gmail.com",
+	"Allergy": "soy",
+	
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+    },
+  "PatientOnlyWithValidAdditionalDetails" : {
+	
+	"FoodPreference": "VEGAN"
+	
+  },
+  "PatientWithInvalidData" : {
+	"FirstName":"karthika1",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+    },
+  "PatientWithValidDataInvalidPatientId" : {
+	
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113@gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+    },
+	
+  "PatientWithValidDataInvalidMethod" : {
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113@gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+	  },
+ "PatientWithValidDataInvalidEndPoints" : {
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113@gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+	    },
+ "PatientWithValidDataInvalidContentType" : {
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155553",
+	"Email": "RestA_hak113@gmail.com",
+	"Allergy": "soy",
+	"FoodPreference": "NonVeg",
+	"CuisineCategory":"Tamil nadu",
+	"DateOfBirth": "1975-11-17"
+	    },
+	"Admin" : {
+		"FirstName":"karthika",
+		"LastName":"TTTHack",
+		"ContactNumber": "1111155553",
+		"Email": "RestA_hak113@gmail.com",
+		"Allergy": "soy",
+		"FoodPreference": "NonVeg",
+		"CuisineCategory":"Tamil nadu",
+		"DateOfBirth": "1975-11-17"
+		    },
+	"Patient" : {
+		"FirstName":"karthika",
+		"LastName":"TTTHack",
+		"ContactNumber": "1111155553",
+		"Email": "RestA_hak113@gmail.com",
+		"Allergy": "soy",
+		"FoodPreference": "NonVeg",
+		"CuisineCategory":"Tamil nadu",
+		"DateOfBirth": "1975-11-17"
+			    },
+	"Vitals" : 	{
+	  "Weight":"71.5",
+	  "Height":"5.6",
+	  "Temperature":"98.7",
+	  "SP":"130",
+	  "DP":"89"
+				}
+  
+}
+

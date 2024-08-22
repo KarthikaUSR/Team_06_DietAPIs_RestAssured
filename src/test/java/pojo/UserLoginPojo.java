@@ -4,11 +4,18 @@ public class UserLoginPojo {
 	
 	private String userLoginEmail;
 	private String password;
-
+	private String BearerToken;
+	
 	private String AdminBearerToken;
 	private String DieticianBearerToken;
 	private String PatientBearerToken;
 	
+	public String getBearerToken() {
+		return BearerToken;
+	}
+	public void setBearerToken(String bearerToken) {
+		this.BearerToken = bearerToken;
+	}
 	
 	public String getAdminBearerToken() {
 		return AdminBearerToken;

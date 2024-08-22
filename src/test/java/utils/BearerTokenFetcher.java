@@ -14,6 +14,8 @@ import pojo.UserLoginPojo;
 
 public class BearerTokenFetcher {
 	
+	
+	
 	 public static String fetchBearerToken(String username,String password) throws JsonProcessingException  {
 		 UserLoginPojo userobj = new UserLoginPojo();
 		 userobj.setUserLoginEmail(username);
@@ -31,14 +33,15 @@ public class BearerTokenFetcher {
 	        .extract().response();
 	    Assert.assertEquals(200, response.statusCode());
 	    String token=response.body().jsonPath().getString("token");
-	    System.out.println("BearerToken : "+token);
-	    //userobj.setAdminBearerToken(token);
+	    //System.out.println("BearerToken : "+token);
+	
+	   
 	    return token;
 	    }
 
 		public String Token(String role,String username,String password) throws JsonProcessingException
 		{   
-			//userloginpojo userobj = new userloginpojo();
+			
 			
 			String token="";
 			

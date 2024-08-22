@@ -7,10 +7,10 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features={"src/test/resources/Feature_Files/GetAllPatientInfo.feature"},
+@CucumberOptions(features={"src/test/resources/feature_Files"},
 
 glue= {"stepDefintions"},
-plugin = {"pretty"}
+plugin = {"pretty","html:target/karthika.html","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 
 public class TestRunner {
