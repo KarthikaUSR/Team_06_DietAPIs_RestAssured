@@ -1,50 +1,60 @@
 
 { 
-  "PateintCreationValid" : {
-	"FirstName":"Karthika",
-	"LastName":"TTT",
-	"ContactNumber": "0177756789",
-	"Email": "RestA_fin8@gmail.com",
-	"Allergy": "almond",
+  "PateintUpdateValid" : {
+	"FirstName":"karthika",
+	"LastName":"TTTHack",
+	"ContactNumber": "1111155443",
+	"Email": "RestA_hak66@gmail.com",
+	"Allergy": "soy",
 	"FoodPreference": "NonVeg",
 	"CuisineCategory":"Tamil nadu",
-	"DateOfBirth": "1998-08-17"
+	"DateOfBirth": "1975-11-11"
   },
-  "PateintCreationValidMandatory" : {
-	"FirstName":"BHack",
-	"LastName":"UUU",
-	"ContactNumber": "4423456789",
-	"Email": "RestA_find2@gmail.com",
+  "PateintUpdateValidMandatory" : {
+	"FirstName":"mandatory",
+	"LastName":"Update",
+	"ContactNumber": "1112113444",
+	"Email": "RestA_t@gmail.com",
 	"Allergy": "soy",
 	"CuisineCategory":"Tamil nadu",
-	"DateOfBirth": "1998-04-16"
+	"DateOfBirth": "1976-11-16"
   },
-  "PateintCreationValidAdditional" : {
+  "PateintUpdateValidAdditional" : {
 	
-	"FoodPreference": "NonVeg"
+	"FoodPreference": "VEGAN"
 	
   },
-  "PateintCreationInValidMandatory" : {
+  "PateintUpdateInValidMandatory" : {
   	"FirstName":"CHack",
   	"LastName":"TTT1",
-  	"ContactNumber": "1440144444",
+  	"ContactNumber": "1111144444",
   	"Email": "RestA_hakgmail.com",
   	"Allergy": "almond",
   	"FoodPreference": "NonVeg",
   	"CuisineCategory":"Tamil nadu",
   	"DateOfBirth": "1976-03-16"
     },
-  "PateintCreationInValidAdditional" : {
+  "PateintUpdateInValidPatientID" : {
   	"FirstName":"Patthree",
   	"LastName":"TTT",
   	"ContactNumber": "6388173333",
   	"Email": "RestA_chec3@gmail.com",
   	"Allergy": "almond",
-  	"FoodPreference": "NonVegegg",
+  	"FoodPreference": "NonVeg",
   	"CuisineCategory":"Tamil nadu",
   	"DateOfBirth": "1961-03-12"
     },
-  "PateintCreationValidDataInvalidMethod" : {
+	"PateintUpdateWithNoFile" : {
+  	"FirstName":"Karthika",
+  	"LastName":"nofile",
+  	"ContactNumber": "6388173333",
+  	"Email": "RestA_chec3@gmail.com",
+  	"Allergy": "almond",
+  	"FoodPreference": "NonVeg",
+  	"CuisineCategory":"Tamil nadu",
+  	"DateOfBirth": "1961-03-12"
+	    },
+  "PateintUpdateValidDataInvalidMethod" : {
 		"FirstName":"Patthree",
 		"LastName":"TTT",
 		"ContactNumber": "1038173333",
@@ -54,7 +64,7 @@
 		"CuisineCategory":"Tamil nadu",
 		"DateOfBirth": "1961-03-13"
 	  },
- "PateintCreationValidDataInvalidEndpoints" : {
+ "PateintUpdateValidDataInvalidEndpoints" : {
 	  	"FirstName":"Pattwo",
 	  	"LastName":"TTT",
 	  	"ContactNumber": "1088172222",
@@ -64,7 +74,7 @@
 	  	"CuisineCategory":"Tamil nadu",
 	  	"DateOfBirth": "1961-02-16"
 	    },
- "PateintCreationInValidContentType" : {
+ "PateintUpdationInValidContentType" : {
 	  	"FirstName":"Patdthree",
 	  	"LastName":"TTT",
 	  	"ContactNumber": "1444173333",
@@ -76,7 +86,7 @@
 	    },
 	"Admin" : {
 	  	"FirstName":"AdminPatdthree",
-	  	"LastName":"TTT",
+	  	"LastName":"TTTr",
 	  	"ContactNumber": "1222171111",
 	  	"Email": "RestA_checkadmin@gmail.com",
 	  	"Allergy": "almond",
@@ -86,7 +96,7 @@
 		    },
 	"Patient" : {
 	  	"FirstName":"Patientdthree",
-	  	"LastName":"TTT",
+	  	"LastName":"TTTw",
 	  	"ContactNumber": "1333173666",
 	  	"Email": "RestA_checkpatient@gmail.com",
 	  	"Allergy": "almond",

@@ -36,8 +36,7 @@ Background:
     |Email                  |Password  | Roles     |
     |Team6.admin@gmail.com  |test      | Admin     |
     |RestA_check10@gmail.com|test      | Patient   |
-    
-    
+   
     
     
     

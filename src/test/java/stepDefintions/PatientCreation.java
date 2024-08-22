@@ -1,6 +1,7 @@
 package stepDefintions;
 
 import java.io.IOException;
+import java.util.Map;
 
 import org.junit.Assert;
 
@@ -15,9 +16,10 @@ import utils.BearerTokenFetcher;
 
 public class PatientCreation {
 
-	PatientInfo patientinfo=new PatientInfo();
+	
 	Patient_Modules patient_mod =Patient_Modules.getInstance() ;
 	Response Resp;
+	PatientInfo patientinfo=new PatientInfo();
 	
 	@Given("^Dietician creates (.+) request into the form-data key and value fields$")
 	public void Dietician_creates_request_into_the_form_data_key_and_value_fields(String key) {
@@ -47,21 +49,11 @@ public class PatientCreation {
 		String Email=Resp.body().jsonPath().getString("Email");
 		String PatientID=Resp.body().jsonPath().getString("patientId");
 		String FileID=Resp.body().jsonPath().getMap("FileMorbidity").keySet().toString();
-		patientinfo.setPatientFileID(FileID);
-		patientinfo.setEmail(Email);
-		patientinfo.setPatientID(PatientID);
+		System.out.println("Email : "+Email);
+		System.out.println("PatientID : "+PatientID);
+		System.out.println("FileID : "+FileID);
 		}
-		else if(Statuscode==400)
-		{
-			String ErrorMsg=Resp.body().jsonPath().getString("errorCode");
-			System.out.println("ERROR MESSAGE" +ErrorMsg);
-		}	
-		else
-		{
-			String ErrorMsg=Resp.body().jsonPath().getString("error");
-			System.out.println("ERROR MESSAGE" +ErrorMsg);
-			
-		}
+		
 		
 	}
 	

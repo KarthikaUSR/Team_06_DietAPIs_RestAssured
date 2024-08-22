@@ -100,7 +100,8 @@ public class PatientInfo {
 	public void setDateofbirth(Date dateofbirth) {
 		this.Dateofbirth = dateofbirth;
 	}
-@Override public String toString() { return "[FirstName=" + FirstName + ", LastName=" + LastName + ","
+@Override 
+public String toString() { return "[FirstName=" + FirstName + ", LastName=" + LastName + ","
 		  		+ " ContactNumber" + ContactNumber +", Email=" + Email + ", Allergy=" + Allergy + ","
 		  		  		 +" FoodPreference" + FoodPreference+ ", CuisineCategory=" + CuisineCategory +", Dateofbirth=" + Dateofbirth + "]"; }
 

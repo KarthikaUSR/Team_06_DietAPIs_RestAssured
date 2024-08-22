@@ -14,13 +14,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import pojo.PatientInfo;
 import utils.BearerTokenFetcher;
 
 
 public class GetAllPatient {
 	
 	BearerTokenFetcher tok=new BearerTokenFetcher();
-	
+	PatientInfo patientinfo=new PatientInfo();
 	String D_token;
 	Patient_Modules patient_mod=Patient_Modules.getInstance() ;
 	Response Resp;
@@ -91,7 +92,7 @@ public class GetAllPatient {
 
 	}
 
-	@Then("^(.+) recieves (.+) Forbidden for get all patient$")
+	@Then("^(.+) recieves (.+) Forbidden for all patient$")
 	public void patient_recieves_forbidden_for_get_all_patient(String S,int int1) {
 		System.out.println("Access Rights for " +S+" is Forbidden");
 		Assert.assertEquals(Resp.statusCode(), int1);

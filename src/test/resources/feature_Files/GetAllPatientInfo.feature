@@ -25,7 +25,7 @@ Background:
     Given <Roles> Set Token with <Email> <Password> 
     And   <Roles> create GET requests 
     When  <Roles> send GET http requests with endpoint
-    Then  <Roles> recieves 403 Forbidden for get all patient
+    Then  <Roles> recieves 403 Forbidden for all patient
     Examples: 
     |Email                |Password  | Roles     |
     |Team6.admin@gmail.com|test      | Admin     |
